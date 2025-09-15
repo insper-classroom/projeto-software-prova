@@ -1,5 +1,5 @@
 FROM amazoncorretto:21
 
-COPY target/pessoas-0.0.1-SNAPSHOT.jar /app.jar
+COPY target/pessoa-0.0.1-SNAPSHOT.jar /app.jar
 
 ENTRYPOINT ["java", "-jar", "/app.jar"]
