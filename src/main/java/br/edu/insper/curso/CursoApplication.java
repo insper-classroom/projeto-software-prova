@@ -1,13 +1,13 @@
-package br.edu.insper.pessoa;
+package br.edu.insper.curso;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PessoaApplication {
+public class CursoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PessoaApplication.class, args);
+		SpringApplication.run(CursoApplication.class, args);
 	}
 
 }
