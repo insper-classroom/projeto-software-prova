@@ -44,7 +44,7 @@ jobs:
           push: true
           tags: carolinaeskenazi/curso-ci:${{ github.sha }}
 
-      - name: executing remote ssh commands using password
+      - name: Deploy na AWS via SSH
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST_TEST }}
@@ -52,6 +52,19 @@ jobs:
           key: ${{ secrets.KEY_TEST }}
           port: 22
           script: |
-            docker stop curso
-            docker rm --force curso
-            docker run -d -p 8080:8080 --name curso --network=rede carolinaeskenazi/curso-ci:${{ github.sha }}
+            # Cria rede se não existir
+            docker network create rede || true
+
+            # Sobe ou recria MySQL
+            docker stop mysql || true
+            docker rm mysql || true
+            docker run -d --name mysql --network=rede \
+              -e MYSQL_ROOT_PASSWORD=root \
+              -e MYSQL_DATABASE=curso \
+              -p 3306:3306 mysql:8.0
+
+            # Sobe ou recria a aplicação
+            docker stop curso || true
+            docker rm curso || true
+            docker run -d -p 8080:8080 --name curso --network=rede \
+              carolinaeskenazi/curso-ci:${{ github.sha }}
