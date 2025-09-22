@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Curso.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">pessoa</a> &gt; <a href="index.source.html" class="el_package">br.edu.insper.curso.model</a> &gt; <span class="el_source">Curso.java</span></div><h1>Curso.java</h1><pre class="source lang-java linenums">package br.edu.insper.curso.model;
+
+import jakarta.persistence.*;
+import java.time.LocalDate;
+
+@Entity
+@Table(name = &quot;cursos&quot;)
+<span class="fc" id="L8">public class Curso {</span>
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String titulo;
+    private String descricao;
+    private Integer cargaHoraria;
+    private String instrutor;
+    private LocalDate dataCadastro;
+
+    // Getters e Setters
+
+    public Long getId() {
+<span class="fc" id="L22">        return id;</span>
+    }
+
+    public void setId(Long id) {
+<span class="fc" id="L26">        this.id = id;</span>
+<span class="fc" id="L27">    }</span>
+
+    public String getTitulo() {
+<span class="fc" id="L30">        return titulo;</span>
+    }
+
+    public void setTitulo(String titulo) {
+<span class="fc" id="L34">        this.titulo = titulo;</span>
+<span class="fc" id="L35">    }</span>
+
+    public String getDescricao() {
+<span class="fc" id="L38">        return descricao;</span>
+    }
+
+    public void setDescricao(String descricao) {
+<span class="fc" id="L42">        this.descricao = descricao;</span>
+<span class="fc" id="L43">    }</span>
+
+    public Integer getCargaHoraria() {
+<span class="fc" id="L46">        return cargaHoraria;</span>
+    }
+
+    public void setCargaHoraria(Integer cargaHoraria) {
+<span class="fc" id="L50">        this.cargaHoraria = cargaHoraria;</span>
+<span class="fc" id="L51">    }</span>
+
+    public String getInstrutor() {
+<span class="fc" id="L54">        return instrutor;</span>
+    }
+
+    public void setInstrutor(String instrutor) {
+<span class="fc" id="L58">        this.instrutor = instrutor;</span>
+<span class="fc" id="L59">    }</span>
+
+    public LocalDate getDataCadastro() {
+<span class="fc" id="L62">        return dataCadastro;</span>
+    }
+
+    public void setDataCadastro(LocalDate dataCadastro) {
+<span class="fc" id="L66">        this.dataCadastro = dataCadastro;</span>
+<span class="fc" id="L67">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
